@@ -46,3 +46,4 @@ LFSのWebS課題です。下に設計とかを書いていきます🙆‍
 |signin.erb|ログイン画面|
 |signup.erb|新規登録画面|
 |search.erb|検索画面|
+|layout.erb|見た目部分|
