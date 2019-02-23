@@ -1,5 +1,6 @@
-  <section class="first-view center-vertical">
+<section class="first-view center-vertical">
 	<h1>MUSIC SNS!!!</h1>
+	<% if current_user.nil? %>
 	<div>
 			<form action="/sign_in" method="POST" class="form-inline">
 				<input type="text" name="name" placeholder="ユーザー名" >
@@ -7,4 +8,5 @@
 				<input type="submit" value="ログイン" >
 			</form>
 	</div>
+	<% end %>
 </section>

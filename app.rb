@@ -23,10 +23,10 @@ end
 
 post '/signup' do
   user = User.create(
-    name: params[:user_name],
+    name: params[:name],
     password: params[:password],
     password_confirmation: params[:password_confirmation],
-    file: params[:profile_image]
+    # profile_image: params[:profile_image]
   )
   if user.persisted?
     session[:user] = user.id
@@ -35,7 +35,7 @@ post '/signup' do
 end
 
 post '/signin' do
-  user = User.find_by(name: params[:user_name])
+  user = User.find_by(name: params[:name])
   if user && user.authenticate(params[:password])
     session[:user] = user.id
   end
