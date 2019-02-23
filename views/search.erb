@@ -7,14 +7,18 @@
     </form>
     <h2>検索結果</h2>
     <% if !@musics.nil? %>
-      <% @musics.each do |music| %>
-        <div class="post center-vertical">
-          <img src="<%= music["artworkUrl100"] %>">
-          <p>artist:<%= music["artistName"] %></p>
-          <p>コメント:hoge</p>
-          <p>投稿者:<%= current_user.name %></p>
-        </div>
-      <% end %>
+      <div class="center-hrizontal">
+        <% @musics.each do |music| %>
+          <div class="post center-vertical">
+            <img src="<%= music["artworkUrl100"] %>">
+            <p><%= music["artistName"] %></p>
+            <p><%= music["collectionName"] %></p>
+            <p><%= music["trackName"] %></p>
+            <a href="<%= music["previewUrl"] %>">サンプル</a>
+
+          </div>
+        <% end %>
+      </div>
     <% else %>
       検索結果がありません
     <% end %>
