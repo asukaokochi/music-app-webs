@@ -1,4 +1,4 @@
-* {
+  * {
     margin: 0;
     padding: 0;
   }
@@ -26,7 +26,7 @@
 	  height: 350px;
     width: 100%;
     padding-top: 170px;
-    background-image: url("/assets/img/mic.jpg");
+    background-image: url("/assets/imgs/mic.jpg");
     background-size: cover;
     background-repeat: no-repeat;
   }
