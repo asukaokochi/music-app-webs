@@ -11,27 +11,13 @@
 <body>
   <nav class="center-hrizontal">
     <a href="/">MUSIC SNS!!!</a>
-    <% if !current_user.nil? %>
+    <% if current_user.nil? %>
       <a href="/signup">新規登録</a>
     <% else %>
       <a href="/search">search</a>
       <a href="/signout">logout</a>
     <% end %>
   </nav>
-
-  <section class="first-view center-vertical">
-	<h1>MUSIC SNS!!!</h1>
-	<div>
-			<form action="/sign_in" method="POST" class="form-inline">
-				<input type="text" name="name" placeholder="ユーザー名" >
-				<input type="password" name="password" placeholder="パスワード" >
-				<input type="submit" value="ログイン" >
-			</form>
-	</div>
-</section>
-<section class="center-vertical">
-	<h1>最新の投稿</h1>
-</section>
   <%= yield %>
 </body>
 </html>
