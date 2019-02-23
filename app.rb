@@ -5,6 +5,10 @@ require 'sinatra/reloader' if development?
 require 'sinatra/activerecord'
 require './models'
 
+require 'open-uri'
+require 'net/http'
+require 'json'
+
 enable :sessions
 
 helpers do
@@ -43,6 +47,15 @@ post '/signin' do
 end
 
 get '/search' do
+  erb :search
+end
+
+post '/search' do
+  uri = URI("https://itunes.apple.com/search")
+  uri.query = URI.encode_www_form({ term: keyword, country: "US", media: "music", limit: 10 })
+  res = Net::HTTP.get_response(uri)
+  returned_json = JSON.parse(res.body)
+  @musics = returned_json["results"]
   erb :search
 end
 

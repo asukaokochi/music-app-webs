@@ -6,6 +6,17 @@
       <input type="submit" value="検索">
     </form>
     <h2>検索結果</h2>
-    <p>hoge</p>
+    <% if !@musics.nil? %>
+      <% @musics.each do |music| %>
+        <div class="post center-vertical">
+          <img src="<%= music["artworkUrl100"] %>">
+          <p>artist:<%= music["artistName"] %></p>
+          <p>コメント:hoge</p>
+          <p>投稿者:<%= current_user.name %></p>
+        </div>
+      <% end %>
+    <% else %>
+      検索結果がありません
+    <% end %>
   </section>
 </main>
