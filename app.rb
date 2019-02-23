@@ -17,15 +17,16 @@ get '/' do
   erb :index
 end
 
-get '/sign_up' do
-  erb :sign_up
+get '/signup' do
+  erb :signup
 end
 
-post '/sign_up' do
+post '/signup' do
   user = User.create(
-    user_name: params[:user_name],
+    name: params[:user_name],
     password: params[:password],
-    password_confirmation: params[:password_confirmation]
+    password_confirmation: params[:password_confirmation],
+    file: params[:profile_image]
   )
   if user.persisted?
     session[:user] = user.id

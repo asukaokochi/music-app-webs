@@ -14,6 +14,7 @@ gem 'rake'
 gem 'sinatra-activerecord'
 
 gem 'bcrypt'
+gem 'pry'
 
 group :development do
   gem 'sqlite3', '~> 1.3.6'
