@@ -9,6 +9,8 @@ require 'open-uri'
 require 'net/http'
 require 'json'
 
+#おにく
+
 enable :sessions
 
 helpers do
