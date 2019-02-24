@@ -1,4 +1,21 @@
 <section class="center-vertical">
 	<h1><%= current_user.name %>の投稿</h1>
-  <p>huga</p>
+  <% if !@posts.nil? %>
+      <div class="center-hrizontal">
+        <% @posts.each do |post| %>
+          <div class="post center-vertical">
+            <img src="<%= post.music_image %>">
+            <p><%= post.artist %></p>
+            <p><%= post.album %></p>
+            <p><%= post.track %></p>
+            <a href="<%= post.sample_music %>">サンプル</a>
+            <p>コメント：<%= CGI.escapeHTML(post.comment)  %></p>
+            <a href="/delete/<%= post.id %>">削除</a>
+            <a href="/edit/<%= post.id %>">編集</a>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      投稿がありません
+    <% end %>
 </section>

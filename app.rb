@@ -61,6 +61,7 @@ post '/search' do
 end
 
 post '/new' do
+  Post.create(music_image: params[:music_image],artist: params[:artist],album: params[:album],track: params[:track],sample_music: params[:sample_music],comment: params[:comment],user_id: current_user.id,post_user: current_user.name)
   redirect '/home'
 end
 
@@ -71,4 +72,13 @@ end
 
 get '/home' do
   erb :home
+end
+
+get '/edit/:id' do
+  erb :edit
+end
+
+get '/delete/:id' do
+  Post.find(params[:id]).delete
+  redirect '/home'
 end
