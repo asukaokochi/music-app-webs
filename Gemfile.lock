@@ -21,6 +21,7 @@ GEM
     debase (0.2.2)
       debase-ruby_core_source (>= 0.10.2)
     debase-ruby_core_source (0.10.4)
+    dotenv (2.7.0)
     fastri (0.3.1.1)
     i18n (1.5.3)
       concurrent-ruby (~> 1.0)
@@ -84,6 +85,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt
   debase
+  dotenv
   fastri
   pg (~> 0.18)
   pry

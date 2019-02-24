@@ -9,6 +9,9 @@ require 'open-uri'
 require 'net/http'
 require 'json'
 
+require "sinatra/json"
+require './image_uploader.rb'
+
 #おにく
 
 enable :sessions
@@ -33,8 +36,9 @@ post '/signup' do
     name: params[:name],
     password: params[:password],
     password_confirmation: params[:password_confirmation],
-    # profile_image: params[:profile_image]
+    profile_image: params[:profile_image]
   )
+
   if user.persisted?
     session[:user] = user.id
   end
