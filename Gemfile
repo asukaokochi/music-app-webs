@@ -17,6 +17,8 @@ gem 'bcrypt'
 gem 'pry'
 gem 'dotenv'
 
+gem 'cloudinary'
+
 group :development do
   gem 'sqlite3', '~> 1.3.6'
 end

@@ -36,8 +36,12 @@ post '/signup' do
     name: params[:name],
     password: params[:password],
     password_confirmation: params[:password_confirmation],
-    profile_image: params[:profile_image]
+    profile_image: ""
   )
+
+  if params[:profile_image]
+    image_upload(params[:profile_image])
+  end
 
   if user.persisted?
     session[:user] = user.id

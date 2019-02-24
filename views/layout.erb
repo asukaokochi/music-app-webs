@@ -15,7 +15,13 @@
     <% if current_user.nil? %>
       <a href="/signup">新規登録</a>
     <% else %>
-      <a href="/home"><img src="<%= current_user.profile_image %>" alt="profile-img"></a>
+      <a href="/home">
+      <% unless current_user.profile_image.empty? %>
+        <img src="<%= current_user.profile_image %>" alt="home">
+      <% else %>
+        <img src="/assets/imgs/user.png" alt="home">
+      <% end %>
+      </a>
       <a href="/search">search</a>
       <a href="/signout">logout</a>
     <% end %>
