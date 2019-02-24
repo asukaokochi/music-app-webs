@@ -60,6 +60,10 @@ post '/search' do
   erb :search
 end
 
+post '/new' do
+  redirect '/home'
+end
+
 get '/signout' do
   session[:user] = nil
   redirect '/'
