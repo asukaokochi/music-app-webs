@@ -4,9 +4,9 @@ def image_upload(img)
 
   upload = Cloudinary::Uploader.upload(tempfile.path)
 
-  contents = User.last
+  user = User.last
 
-  contents.update_attribute(:img, upload['url'])
+  user.update_attribute(:profile_image, upload['url'])
 end
 
 def image_upload_local(img)
