@@ -18,6 +18,11 @@ helpers do
 end
 
 get '/' do
+  if current_user.nil?
+    @posts = Post.none
+  else
+    @posts = current_user.posts
+  end
   erb :index
 end
 
