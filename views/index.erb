@@ -15,25 +15,14 @@
     <h1>最新の投稿</h1>
     <div class="center-hrizontal">
 			<% if !@posts.nil? %>
-				<div class="post center-vertical">
+				<div class="center-vertical">
 						<div class="center-hrizontal">
 							<% @posts.each do |post| %>
 								<div class="post center-vertical">
-									<img src="<%=  %>">
-									<p><%= music["artistName"] %></p>
-									<p><%= music["collectionName"] %></p>
-									<p><%= music["trackName"] %></p>
-									<a href="<%= music["previewUrl"] %>">サンプル</a>
-									<%# フォーム %>
-									<form action="/new" method="post">
-										<input type="hidden" value="<%= music["artworkUrl100"] %>" name="music_image">
-										<input type="hidden" value="<%= music["artistName"] %>"  name="artist">
-										<input type="hidden" value="<%= music["collectionName"] %>" name="album">
-										<input type="hidden" value="<%= music["trackName"] %>" name="track">
-										<input type="hidden" value="<%= music["previewUrl"] %>" name="sample_music">
-										<input type="text" name="comment" placeholder="コメント">
-										<input type="submit" value="投稿">
-									</form>
+									<img src="<%= post.music_image %>" alt="<%= post.album %>">
+									<p>artist:<%= post.artist %></p>
+									<p>コメント:<%= post.comment %></p>
+									<p>投稿者:<%= post.post_user %></p>
 								</div>
 							<% end %>
 						</div>
