@@ -18,11 +18,7 @@ helpers do
 end
 
 get '/' do
-  if current_user.nil?
-    @posts = Post.none
-  else
-    @posts = current_user.posts
-  end
+  @posts = Post.all
   erb :index
 end
 
@@ -76,6 +72,11 @@ get '/signout' do
 end
 
 get '/home' do
+  if current_user.nil?
+    @posts = Post.none
+  else
+    @posts = current_user.posts
+  end
   erb :home
 end
 
