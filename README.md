@@ -2,6 +2,9 @@
 ## 概要
 LFSのWebS課題です。下に設計とかを書いていきます🙆‍
 
+## 実際のサイト
+https://musicsns.herokuapp.com/
+
 ## コア機能
 - ユーザ機能
 - 投稿機能
