@@ -81,7 +81,15 @@ get '/home' do
 end
 
 get '/edit/:id' do
+  @post = Post.find(params[:id])
   erb :edit
+end
+
+post '/edit/:id' do
+  post = Post.find(params[:id])
+  post.comment = params[:comment]
+  post.save
+  redirect "/home"
 end
 
 get '/delete/:id' do
